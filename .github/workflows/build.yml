@@ -41,7 +41,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          release_name: Release
+          tag_name: ${{ github.event.commits[0].message }}
+          release_name: Release ${{ github.event.commits[0].message }}
       - name: ls
         run: ls -a
       - name: Upload Release APK
