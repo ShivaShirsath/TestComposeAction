@@ -1,12 +1,9 @@
-name: Minimal Android CI
+name: Android CI
 
 on:
   push:
     branches:
       - master
-    tags:
-      - 'v*'
-
 jobs:
   isvalid:
     if: startsWith(github.event.commits[0].message, 'v')
