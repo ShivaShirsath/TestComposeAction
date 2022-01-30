@@ -42,10 +42,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }} 
+          release_name: Release ${{ github.ref }}
+      - name: ls
+        run: ls -a
       - name: Upload Release APK
         id: upload_release_asset
-        run: ls -a
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
