@@ -45,8 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: ${{ github.event.comment.created_at }}
-          release_name: Release on ${{ github.event.comment.created_at }}
+          tag_name: ${{ github.event.commits[0].message }}
+          release_name: Release ${{ github.event.commits[0].message }}
       - name: ls
         run: ls -a
       - name: Upload Release APK
